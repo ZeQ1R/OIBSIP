@@ -1,0 +1,323 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --background: #08090d;
+    --calculator: #11131a;
+    --display: #090a0e;
+    --button: #191b23;
+    --button-hover: #222530;
+
+    --border: #292c36;
+
+    --text: #f5f5f7;
+    --muted: #858997;
+
+    --primary: #7c6cff;
+    --primary-hover: #6959f4;
+
+    --danger: #ff6666;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #18152d,
+            #08090d 50%
+        );
+
+    color: var(--text);
+}
+
+
+.calculator-container {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.calculator {
+    width: 100%;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151721,
+            #0e0f14
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 5px 15px;
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+}
+
+
+.status {
+    color: #62d993;
+}
+
+
+.display {
+    min-height: 145px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    background: var(--display);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.expression {
+    width: 100%;
+
+    min-height: 22px;
+
+    text-align: right;
+
+    color: #656976;
+
+    font-size: 0.8rem;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+.display-value {
+    width: 100%;
+
+    margin-top: 7px;
+
+    text-align: right;
+
+    color: var(--text);
+
+    font-size: clamp(2rem, 8vw, 3rem);
+
+    font-weight: 600;
+
+    letter-spacing: -0.04em;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        repeat(5, 68px);
+
+    gap: 10px;
+}
+
+
+.button {
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: var(--button);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease,
+        border-color 0.15s ease;
+}
+
+
+.button:hover {
+    background: var(--button-hover);
+
+    border-color: #393c48;
+}
+
+
+.button:active {
+    transform: scale(0.96);
+}
+
+
+.number {
+    color: #e9e9ed;
+}
+
+
+.operator {
+    color: var(--primary-light, #a59cff);
+
+    background: #171625;
+}
+
+
+.operator:hover {
+    background: #211f39;
+
+    border-color: #46416e;
+}
+
+.clear {
+    color: #ff8585;
+
+    background: #211518;
+}
+
+
+.clear:hover {
+    background: #321b20;
+
+    border-color: #67343b;
+}
+
+
+.delete {
+    color: #e1a7a7;
+}
+
+
+
+
+.equals {
+    grid-row: span 2;
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+
+    font-size: 1.3rem;
+}
+
+
+.equals:hover {
+    background: var(--primary-hover);
+
+    border-color: var(--primary-hover);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.decimal {
+    color: #d0d2da;
+}
+
+
+.footer-text {
+    margin-top: 20px;
+
+    color: #5f636e;
+
+    font-size: 0.65rem;
+}
+
+
+@media (max-width: 430px) {
+
+    .calculator-container {
+        padding: 15px 10px;
+    }
+
+    .calculator {
+        padding: 13px;
+    }
+
+    .buttons {
+        grid-template-rows:
+            repeat(5, 62px);
+
+        gap: 8px;
+    }
+
+    .display {
+        min-height: 130px;
+
+        padding: 18px;
+    }
+
+}
+
+
+@media (max-width: 340px) {
+
+    .buttons {
+        grid-template-rows:
+            repeat(5, 55px);
+
+        gap: 6px;
+    }
+
+    .button {
+        font-size: 0.85rem;
+    }
+
+}
