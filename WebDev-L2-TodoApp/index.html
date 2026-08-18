@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | To-Do App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">✓</div>
+
+                <div>
+                    <h1>TaskFlow</h1>
+                    <p>Stay organized. Get things done.</p>
+                </div>
+            </div>
+
+            <div class="date-display" id="dateDisplay"></div>
+
+        </header>
+
+
+        <main>
+
+            <section class="add-task-section">
+
+                <div class="section-title">
+                    <span>Today's Tasks</span>
+                    <span class="task-total" id="totalTasks">0 tasks</span>
+                </div>
+
+                <form class="task-form" id="taskForm">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you need to accomplish?"
+                        autocomplete="off"
+                        maxlength="150"
+                    >
+
+                    <button type="submit">
+                        <span>+</span>
+                        Add Task
+                    </button>
+
+                </form>
+
+                <p class="input-error" id="inputError"></p>
+
+            </section>
+
+
+            <section class="tasks-section">
+
+                <div class="list-container">
+
+                    <div class="list-header">
+
+                        <div class="list-title">
+                            <div class="status-dot pending-dot"></div>
+
+                            <h2>Pending Tasks</h2>
+
+                            <span class="count" id="pendingCount">0</span>
+                        </div>
+
+                    </div>
+
+                    <div class="task-list" id="pendingList"></div>
+
+                    <div class="empty-state" id="pendingEmpty">
+                        <div class="empty-icon">✓</div>
+                        <h3>Nothing pending</h3>
+                        <p>You're all caught up. Great job!</p>
+                    </div>
+
+                </div>
+
+
+                <div class="list-container">
+
+                    <div class="list-header">
+
+                        <div class="list-title">
+                            <div class="status-dot completed-dot"></div>
+
+                            <h2>Completed Tasks</h2>
+
+                            <span class="count completed-count" id="completedCount">0</span>
+                        </div>
+
+                    </div>
+
+                    <div class="task-list" id="completedList"></div>
+
+                    <div class="empty-state" id="completedEmpty">
+                        <div class="empty-icon">○</div>
+                        <h3>No completed tasks</h3>
+                        <p>Completed tasks will appear here.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>TaskFlow</p>
+            <span>Keep moving forward.</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
