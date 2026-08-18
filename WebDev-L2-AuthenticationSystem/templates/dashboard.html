@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureAuth | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-brand">
+
+            <div class="brand-icon">S</div>
+
+            <span>SecureAuth</span>
+
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="logout-button">
+            Logout
+        </a>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-card">
+
+            <div class="welcome-content">
+
+                <p class="eyebrow">
+                    Dashboard
+                </p>
+
+                <h1>
+                    Welcome,
+                    <span>{{ username }}</span>
+                </h1>
+
+                <p>
+                    You have successfully logged in to your protected
+                    SecureAuth dashboard.
+                </p>
+
+            </div>
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <strong>Authenticated</strong>
+                    <span>Session active</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+            <article class="info-card">
+
+                <div class="card-icon">
+                    01
+                </div>
+
+                <h2>
+                    Your Account
+                </h2>
+
+                <p>
+                    Your account information is securely available
+                    after successful authentication.
+                </p>
+
+                <div class="account-info">
+
+                    <div>
+                        <span>Username</span>
+                        <strong>{{ username }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Email</span>
+                        <strong>{{ email }}</strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <div class="card-icon">
+                    02
+                </div>
+
+                <h2>
+                    Security
+                </h2>
+
+                <p>
+                    Passwords are securely hashed before being stored.
+                    Authentication is managed through Flask sessions.
+                </p>
+
+                <div class="security-status">
+
+                    <span></span>
+
+                    Authentication protected
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
