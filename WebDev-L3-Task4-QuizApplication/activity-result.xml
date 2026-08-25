@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="30dp"
+    android:background="#F4F7FB">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Complete!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#17202A"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 8 / 10"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#2563EB"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/correctText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct: 8"
+        android:textSize="18sp"
+        android:textColor="#228B22"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/incorrectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incorrect: 2"
+        android:textSize="18sp"
+        android:textColor="#C80000"
+        android:layout_marginBottom="35dp" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:text="Restart Quiz"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2563EB" />
+
+</LinearLayout>
